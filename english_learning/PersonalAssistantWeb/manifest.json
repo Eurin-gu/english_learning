@@ -1,0 +1,10 @@
+{
+  "name": "个人效率管家 Pro",
+  "short_name": "效率管家",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0b0d12",
+  "theme_color": "#10131a",
+  "description": "OCR + 任务 + 记账 + 生词复习",
+  "icons": []
+}

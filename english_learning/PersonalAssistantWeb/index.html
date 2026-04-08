@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#10131a" />
+    <title>个人效率管家 Pro</title>
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>个人效率管家 Pro</h1>
+      <p>微信截图可识别，自动拆任务/账单/生词</p>
+      <div class="chips">
+        <span>OCR增强</span><span>快捷指令自动解析</span><span>本地保存</span>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <h2>导入</h2>
+        <div class="grid">
+          <label class="upload">
+            <input id="imageInput" type="file" accept="image/*" capture="environment" />
+            <span>上传截图/图片 OCR</span>
+          </label>
+          <button id="ocrBtn">开始 OCR 识别</button>
+        </div>
+        <textarea id="textInput" rows="8" placeholder="粘贴微信/QQ/课程/账单文本，或通过快捷指令传入"></textarea>
+        <div class="actions">
+          <button id="parseBtn">解析并入库</button>
+          <button id="clearBtn" class="ghost">清空输入</button>
+        </div>
+        <p id="status" class="status">准备就绪</p>
+      </section>
+
+      <section class="card">
+        <h2>记账统计</h2>
+        <canvas id="expenseChart" height="150"></canvas>
+      </section>
+
+      <section class="card">
+        <h2>任务</h2>
+        <ul id="taskList" class="list"></ul>
+      </section>
+
+      <section class="card">
+        <h2>支出</h2>
+        <ul id="expenseList" class="list"></ul>
+      </section>
+
+      <section class="card">
+        <div class="title-row">
+          <h2>生词（晚间复习）</h2>
+          <button id="nightReviewBtn" class="ghost">生成今晚复习清单</button>
+        </div>
+        <ul id="wordList" class="list"></ul>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
